@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "nodemon":"2.0.4",
+    "apollo-server":"2.16.1",
+    "graphql":"15.3.0",
+    "mysql2":"2.1.0",
+    "sequelize":"6.3.4",
+    "dotenv":"8.2.0"
+  }
+}

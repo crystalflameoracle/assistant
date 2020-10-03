@@ -1,0 +1,51 @@
+version: '3'
+services:
+
+
+  ui:
+    build: ./src/ui
+    volumes:
+      - ./src/ui:/ui
+      - /ui/node_modules
+    ports:
+      - 3000:3000
+    container_name: mvw_ui
+    depends_on:
+      - api
+
+
+  api:
+    build: ./src/api
+    volumes:
+      - ./src/api:/api
+      - /api/node_modules
+    ports:
+      - 4000:4000
+    container_name: api
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+    ports:
+      - 3308:3306
+    container_name: db
+
+    
+  pma:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: pma
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 3309:80
+    depends_on:
+      - db
+    links:
+      - db:db
+    environment:
+      - PMA_PORT=3308
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD

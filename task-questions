@@ -1,0 +1,41 @@
+Category(like art/writing/coding)
+Type {
+    Continuous(never-ending - like practicing instrument)
+    Project (multi-faceted ongoing project)
+    Reoccuring (work)
+    One-Time(call dr. office)
+}
+Hours(){
+    Type{
+        Continuous - Hours per week desired to work on
+            Hours Chunked{
+                min
+                max
+            }
+            Hours Available{
+                Start Time
+                End Time
+            }
+        Project - Hours per week desired to work on && how many hours to complete project
+            Hours Chunked{
+                min
+                max
+            }
+            Due Date
+            Hours Available{
+                Start Time
+                End Time
+            }
+        Recurring{
+            Hours taken(Calender and days integration here - so like every MWF it's 9-5)
+        }
+        One-Time{            
+            How long to complete
+            Due Date
+        }
+    }
+}
+Priority(for algorithm)
+Shared (with other users)
+
+NOTE FOR DB - ALSO ADD HOURS SPENT ON TASK FIELD IN DB

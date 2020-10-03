@@ -1,0 +1,19 @@
+.taskContainer{
+    background-color:white;
+    width:200px;
+    height:50px;
+    margin:15px;
+    display:flex;
+    flex-flow:column wrap;
+}
+.-active{
+    width:250px;
+    height:75px;
+}
+#addtask{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width:400px;
+    margin:20px;
+}

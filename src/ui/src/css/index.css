@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+
+/* Variables */
+:root{
+ --color-bg-light: #7166ee;
+ --color-bg-dark: #5647bd;
+ --color-accent-teal: #56b0d2ab;
+ --color-offwhite-purple: #e9e6f9;
+ --color-shadow-purple: #1b1b64eb;
+ --color-font-light: hsla(227.5, 85.3%, 32%, 0.7);
+ --color-font-heavy:#dd726d;
+}
+
+/* Mixins */
+.-drop-shadowed {
+    box-shadow:2px 4px 7px 5px hsla(0, 0%, 0%, .2);
+}
+.-shadow-animated{
+    transition: box-shadow .5s;
+}
+.-shadow-animated:focus{
+    box-shadow: 8px 8px 15px 7px rgba(178, 124, 208, 0.46);
+}
+.-inset-shadowed {
+    box-shadow: inset 5px 5px 5px 2px hsla(0, 0%, 0%, .1);
+}
+.-rounded-corners{
+    border-radius: 20px;
+}
+.-font-style-heavy{
+    font: 900 2em 'Merriweather', serif;
+    line-Height: 2em;
+    color: var(--color-font-heavy);
+}
+.-font-style-light{
+    font: 400 1.2em 'Merriweather', serif;
+    line-Height: 1.2em;
+    color: var(--color-font-light);
+}
+.-text-input-field{
+    height:2em;
+    background-color: var(--color-offwhite-purple);
+}
+.-textarea-input-field{
+    resize: none;
+    padding:40px;
+    background-color: var(--color-offwhite-purple);
+    line-height:2em;
+}
+
+/* Animations */
+
+._from-bottom{
+    position:relative; 
+    top:1500px;
+    transition: transform 1s;
+}
+
+._is-active{
+    transform: translate(0px, -1500px);
+  }
+  
+._goes-away{
+    transform: translate(14350px, -1500px);
+}
+
+/* Universal */
+html,
+body {
+    background-color: var(--color-bg-dark);
+    margin:0;
+    overflow-x: hidden;  
+    font:var(--font-style-light);  
+    height: 100%;
+}
+* {
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+#main-content {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+}
+   
+#topofpageAccentLine {
+    height: 9px;
+    background-color: #56b0d2ab;
+    flex: 0 1 auto;
+  }
+
+.nameplate {
+    padding-left:15%;
+    color: var(--color-offwhite-purple);
+    text-shadow: 1px 3px 7px var(--color-shadow-purple);
+    font-size:2.5em;
+}
+
+.AlertBox{
+    z-index:99;
+    width:200px;
+    height:100px;
+    margin:-50px 0 0 -100px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    background-color:white;
+}
